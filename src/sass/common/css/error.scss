@@ -1,0 +1,68 @@
+@import "../../_media_queries.scss";
+@import "../../_module.scss";
+
+$cntWidth: 980px;
+
+.errorCnt {
+	width: $cntWidth;
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: 60px 65px;
+	background-color: #FFF;
+
+	@include mq-tb {
+		width: auto;
+		margin: 0 10px;
+		padding: 40px 6.6%;
+	}
+
+	@include mq-sp {
+		width: auto;
+		padding: 20px 15px;
+	}
+
+	.err_title {
+		color: #064593;
+		font-size: 2.8rem;
+		line-height: 1.2;
+		margin-bottom: 30px;
+
+		@include mq-tb {
+			font-size: 2.4rem;
+		}
+
+		@include mq-sp {
+			font-size: 2.0rem;
+			margin-bottom: 20px;
+		}
+	}
+
+	.err_copy {
+		font-size: 1.6rem;
+		line-height: 1.8;
+
+		@include mq-sp {
+			font-size: 1.4rem;
+			line-height: 1.5;
+		}
+	}
+
+	.err_to_top {
+		margin: 20px 0 0;
+
+		a {
+			text-decoration: none;
+
+			&:before {
+				font: normal normal normal 16px/1 FontAwesome;
+				content: "\f105";
+				display: inline-block;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				margin: 0 6px 3px 0;
+				vertical-align: middle;
+			}
+		}
+	}
+}

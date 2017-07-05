@@ -1,0 +1,211 @@
+@import "../../_media_queries.scss";
+@import "../../_module.scss";
+
+//パンくずリスト
+.breadcrumb {
+	z-index: 1001;
+
+	@include mq-sp {
+		display: none;
+	}
+
+	ul {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		letter-spacing: -.40em;
+		font-size: 1.2rem;
+		color: #000;
+		white-space: nowrap;
+
+		@include mq-sp {
+			padding-bottom: 20px;
+		}
+
+		li {
+			display: inline-block;
+			letter-spacing: normal;
+			vertical-align: top;
+			margin-right: 0.5em;
+
+			&:before {
+				content: ">";
+				padding-right: 0.5em;
+			}
+
+			&:first-child:before {
+				content: "";
+				padding-right: 0px;
+			}
+
+			a {
+				color: #000;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+//中ページ左ナビあり二段組み
+.contents {
+	box-sizing: border-box;
+	width: $cntWidth;
+	margin: 0 auto;
+	padding: 0 0 80px;
+
+	@include clearfix;
+
+	@include mq-tb_sp {
+		width: auto;
+	}
+
+	@include mq-tb {
+		padding: 0 0 40px;
+	}
+
+	@include mq-sp {
+		padding: 0 0 20px;
+	}
+}
+
+//スマホフッタサブナビ
+#sp-foot-nav {
+	display: none;
+
+	@include mq-tb_sp {
+		display: block;
+
+		#sp-foot-nav-tit {
+			background-color: #939393;
+			color: #FFF;
+			padding: 15px;
+			position: relative;
+			cursor: pointer;
+
+			&:after {
+				display: block;
+				position: absolute;
+				top: 50%;
+				right: 12px;
+				width: 16px;
+				height: 2px;
+				margin-top: -1px;
+				background-color: #FFF;
+				content: "";
+			}
+
+			&:before {
+				display: block;
+				position: absolute;
+				top: 50%;
+				right: 19px;
+				width: 2px;
+				height: 16px;
+				margin-top: -8px;
+				background-color: #FFF;
+				content: "";
+			}
+
+			&.sp-foot-nav-on {
+				&:before {
+					display: none;
+				}
+			}
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			border-left: #939393 1px solid;
+			border-right: #939393 1px solid;
+			background-color: #FFF;
+
+			li {
+				border-bottom: #939393 1px solid;
+
+				a {
+					display: block;
+					color: #333;
+					text-decoration: none;
+					padding: 15px 30px 15px 15px;
+					position: relative;
+
+					&:after {
+						display: block;
+						position: absolute;
+						top: 50%;
+						right: 15px;
+						width: 9px;
+						height: 9px;
+						margin-top: -4px;
+						border-top: solid 2px #064593;
+						border-right: solid 2px #064593;
+						transform: rotate(45deg);
+						content: "";
+					}
+
+					&.sp-foot-current {
+						color: #064593;
+					}
+
+					span {
+						display: inline;
+						padding: 0;
+					}
+				}
+
+				span {
+					display: block;
+					color: #333;
+					text-decoration: none;
+					padding: 15px 15px 15px 15px;
+				}
+
+				ul {
+					border-left: none;
+					border-right: none;
+					background-color: transparent;
+
+					li {
+						border-bottom: none;
+						border-top: #939393 1px dotted;
+
+						a {
+							padding-left: 30px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include mq-tb {
+		margin: 0 4% 30px;
+		font-size: 1.6rem;
+	}
+
+	@include mq-sp {
+		margin: 0 10px 20px;
+		font-size: 1.4rem;
+	}
+}
+
+.pc_br {
+	@include mq-sp {
+		display: none;
+	}
+}
+
+.sp_br {
+	display: none;
+
+	@include mq-sp {
+		display: inline;
+	}
+}
